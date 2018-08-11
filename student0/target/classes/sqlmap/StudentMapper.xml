@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace：必须与对应的接口全类名一致  UserMapper.java
+    id ：必须与对应接口的某个对应的方法名一致即必须要和UserMapper.java接口中的方法同名。
+ -->
+<mapper namespace="com.student.dao.StudentMapper">
+
+    <update id="update" parameterType="Student">
+        update studnet set sid=#{sid},spwd=#{spwd},sname=#{sname},ssex=#{ssex},semail=#{semail},stel=#{stel} where sid=#{sid}
+    </update>
+
+    <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路径 -->
+    <select id="selectSelective" resultMap="BaseResultMap" parameterType="com.student.entity.Student">
+        select * from student where sname=#{sname} and spwd=#{spwd}
+    </select>
+
+    <select id="findById" parameterType="int" resultType="Student">
+        select sid sid,sname sname,spwd spwd,ssex ssex,stel stel,semail semail from student where sid=#{sid}
+    </select>
+
+</mapper>
