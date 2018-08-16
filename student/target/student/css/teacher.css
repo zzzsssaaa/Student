@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+.divtop{
+	margin:2px auto 0 auto;
+	height:40px;
+	width:1100px;
+	}
+.divtopleft{
+	display:inline;
+	height:40px;
+	width:150px;
+	float:left;
+	}	
+.divtopright{
+	display:inline;
+	height:40px;
+	width:950px;
+	float:right;
+	background-color:#0C6;
+	}
+.divtoplogo{
+	height:40px;
+	width:150px;
+	background-color:#0C6;
+	-webkit-border-top-left-radius: 15px;
+	/*指定上左为圆角*/
+	-webkit-border-top-right-radius: 23px;
+	/*指定上右为圆角*/
+	-webkit-border-bottom-left-radius: 15px;
+	/*指定下左为圆角*/
+	}
+.divtopmessage{
+	font-family:"Times New Roman", Times, serif;
+	font-weight:700;
+	font-size:20px;
+	text-align:right;
+	line-height:50px;
+	margin:0 auto 0 auto;
+	height:38px;
+	width:950px;
+	background-color:#FFF;
+	-webkit-border-bottom-left-radius: 22px;
+	/*指定下左为圆角*/
+	}
+	
+.body{
+	width:1100px;
+	height:520px;
+	margin:15px auto 0 auto;
+	background-color:#0C6;
+	-webkit-border-top-left-radius: 5px;
+	/*指定上左为圆角*/
+	-webkit-border-top-right-radius: 5px;
+	/*指定上右为圆角*/
+	-webkit-border-bottom-right-radius: 5px;
+	/*指定下右为圆角*/
+	-webkit-border-bottom-left-radius: 5px;
+	/*指定下左为圆角*/
+	}
+.bodytop{
+	width:1096px;
+	height:20px;
+	margin-top:2px;
+	margin-left:2px;
+	background-color:#FFF;
+	-webkit-border-top-left-radius: 5px;
+	/*指定上左为圆角*/
+	-webkit-border-top-right-radius: 5px;
+	/*指定下左为圆角*/
+	}	
+.bodybottom{
+	width:1096px;
+	height:496px;
+	margin-top:2px;
+	margin-left:2px;
+	background-color:#FFF;
+	-webkit-border-top-right-radius: 5px;
+	/*指定上右为圆角*/
+	-webkit-border-bottom-right-radius: 5px;
+	/*指定下右为圆角*/
+	/*指定下右为圆角*/
+	}
+.bodybottom1{
+	margin-top:5px;
+	}
+.table1{
+	text-align:center;
+	margin-top:5px;
+	width:1090px;
+	margin:0 auto 0 auto;
+	}
+

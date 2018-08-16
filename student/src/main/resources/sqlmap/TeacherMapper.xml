@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.student.dao.TeacherMapper" >
+
+    <update id="adminUpdateTeacher" parameterType="com.student.entity.Login">
+        update teacher set tname=#{pwd,jdbcType=VARCHAR} where tname=#{number,jdbcType=VARCHAR}
+    </update>
+
+    <update id="adminUpdateClasses" parameterType="com.student.entity.Login">
+        update classes set cteacher=#{pwd,jdbcType=VARCHAR} where cteacher=#{number,jdbcType=VARCHAR}
+    </update>
+
+</mapper>

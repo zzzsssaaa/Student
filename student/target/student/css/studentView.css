@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+
+.divtop{
+	margin:2px auto 0 auto;
+	height:40px;
+	width:1100px;
+	}
+.divtopleft{
+	display:inline;
+	height:40px;
+	width:150px;
+	float:left;
+	}	
+.divtopright{
+	display:inline;
+	height:40px;
+	width:950px;
+	float:right;
+	background-color:#0C6;
+	}
+.divtoplogo{
+	height:40px;
+	width:150px;
+	background-color:#0C6;
+	-webkit-border-top-left-radius: 15px;
+	/*指定上左为圆角*/
+	-webkit-border-top-right-radius: 23px;
+	/*指定上右为圆角*/
+	-webkit-border-bottom-left-radius: 15px;
+	/*指定下左为圆角*/
+	}
+.divtopmessage{
+	font-family:"Times New Roman", Times, serif;
+	font-weight:700;
+	font-size:20px;
+	text-align:right;
+	line-height:50px;
+	margin:0 auto 0 auto;
+	height:38px;
+	width:950px;
+	background-color:#FFF;
+	-webkit-border-bottom-left-radius: 22px;
+	/*指定下左为圆角*/
+	}
+.divbody{
+	margin:40px auto 0 auto;
+	width:1080px;
+	height:400px;
+	}
+.divbodyleft{
+	float:left;
+	width:450px;
+	height:400px;
+	}
+img{
+	width:180px;
+	height:230px;
+	margin-left:105px;
+	margin-top:50px;
+	
+	}	
+.tableleft{
+	width:200px;
+	height:100px;
+	margin-left:95px;
+	margin-top:20px;
+	}
+.td1{
+	font-size:18px;
+	text-align:right;
+	
+	}
+.td2{
+	font-size:18px;
+	}	
+.divbodyright{
+	float:right;
+	width:610px;
+	height:400px;
+	}
+.td3{
+	font-size:18px;
+	text-align:right;
+	width:150px;
+	}
+.td4{
+	font-size:18px;
+	width:220px;
+	}	
+.tableright{
+	width:540px;
+	height:300px;
+	margin-left:0px;
+	margin-top:30px;
+	}
+h1{
+	letter-spacing:5px;
+	/*text-align:center;*/
+	margin-left:180px;
+	margin-top:40px;
+	}
+

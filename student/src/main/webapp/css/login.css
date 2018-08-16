@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+h1{
+	margin-top:40px;
+	text-align:center;
+	font-size:52px;
+	}
+table{
+	margin-top:28px;
+	}
+.divmain{
+	margin:60px auto 0 auto;
+	width:500px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 15px;
+	border-color:#CCC;
+	//background-color:#0FF;
+	}
+.divtitle1{
+	-webkit-border-top-left-radius: 10px;
+	/*指定上左为圆角*/
+	-webkit-border-top-right-radius: 10px;
+	/*指定上右为圆角*/
+	-moz-border-radius-bottomright: 10px;
+	/*指定下右为直角*/
+	background-color:#0C6;
+	border-bottom:hidden;
+	line-height:45px;
+	width:498px;
+	height:45px;
+	}
+.divtitle2{
+	font-size:24px;
+	text-align:center;
+	font-weight:900;
+	text-align:center;
+	}
+.divbody{
+	border-top:1px solid #999;
+	width:498px;
+	height:260px;
+	}
+.inputxtrole{
+	width:230px;
+	height:32px;
+	line-height:32px;
+	margin-left:5px;
+	padding-left:5px;
+	}
+.inputxt{
+	width:230px;
+	height:32px;
+	line-height:32px;
+	margin-left:5px;
+	padding-left:9px;
+	}
+.trmessage{
+	height:20px;
+	padding-left:40px;
+	margin-left:40px;
+	}
+.tdmessage{
+	color:red;
+	padding-left:18px;
+	}
+.td1{
+	height:35px;
+	font-size:16px;
+	text-align:right;
+	width:80px;
+	
+	}
+.td2{
+	width:270px;
+	}
+#bt{
+	}	
+	
+	
+	
+	
