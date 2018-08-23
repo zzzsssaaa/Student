@@ -1,0 +1,13 @@
+第一次
+git init
+git add
+git commit -m "tijiaoxinxi "
+git remote add origin git@github.com:zzzsssaaa/Student.git
+git push -u origin master
+
+以后
+
+git add //添加
+git commit -m "提交信息" //提交
+
+git push -u origin master//上传 
