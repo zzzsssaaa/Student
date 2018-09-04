@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.student.dao.StudentMapper" >
+
+    <resultMap id="BaseResultMap" type="com.student.entity.Student" >
+    <id column="sid" property="sid" jdbcType="INTEGER" />
+    <result column="sstudentnumber" property="sstudentnumber" jdbcType="VARCHAR" />
+    <result column="sname" property="sname" jdbcType="VARCHAR" />
+    <result column="ssex" property="ssex" jdbcType="VARCHAR" />
+    <result column="szhengzhi" property="szhengzhi" jdbcType="VARCHAR" />
+    <result column="sbirthday" property="sbirthday" jdbcType="VARCHAR" />
+    <result column="sqq" property="sqq" jdbcType="VARCHAR" />
+    <result column="stel" property="stel" jdbcType="VARCHAR" />
+    <result column="stelparent" property="stelparent" jdbcType="VARCHAR" />
+    <result column="saddress" property="saddress" jdbcType="VARCHAR" />
+    <result column="semail" property="semail" jdbcType="VARCHAR" />
+    <result column="spwd" property="spwd" jdbcType="VARCHAR" />
+    <result column="sidnumber" property="sidnumber" jdbcType="VARCHAR" />
+</resultMap>
+
+<resultMap id="BaseResultMap1" type="com.student.entity.Admin" >
+    <id column="aid" property="aid" jdbcType="INTEGER" />
+    <result column="anumber" property="anumber" jdbcType="VARCHAR" />
+    <result column="aname" property="aname" jdbcType="VARCHAR" />
+    <result column="apwd" property="apwd" jdbcType="VARCHAR" />
+</resultMap>
+
+    <sql id="Base_Column_List" >
+        sid, sstudentnumber, sname, ssex, szhengzhi, sbirthday, sqq, stel, stelparent, saddress, sidnumber,semail, spwd
+    </sql>
+
+    <sql id="Base_Column_List1" >
+        aid,anumber,aname,apwd
+    </sql>
+
+    <select id="selectSelective" resultMap="BaseResultMap" parameterType="com.student.entity.Student">
+        select
+        <include refid="Base_Column_List" />
+        from student
+        <where>
+            <if test="sstudentnumber != null" >
+                AND sstudentnumber = #{sstudentnumber,jdbcType=VARCHAR}
+            </if>
+            <if test="sid != 0" >
+                AND sid = #{sid,jdbcType=INTEGER}
+            </if>
+            <if test="spwd != null" >
+                AND spwd = #{spwd,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+
+    <select id="adminLogin" resultMap="BaseResultMap1" parameterType="com.student.entity.Admin">
+        select
+        <include refid="Base_Column_List1" />
+        from admin
+        <where>
+            <if test="anumber != null" >
+                AND anumber = #{anumber,jdbcType=VARCHAR}
+            </if>
+            <if test="apwd != null" >
+                AND apwd = #{apwd,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+
+    <select id="adminListStudent" resultMap="BaseResultMap">
+        select * from student
+    </select>
+
+    <update id="update" parameterType="com.student.entity.Student">
+        update student set sname=#{sname}, ssex=#{ssex}, szhengzhi=#{szhengzhi}, sbirthday=#{sbirthday},sidnumber=#{sidnumber}, sqq=#{sqq}, stel=#{stel}, stelparent=#{stelparent}, saddress=#{saddress}, semail=#{semail} where sstudentnumber=#{sstudentnumber}
+    </update>
+
+    <delete id="adminDeleteStudent" parameterType="String">
+        delete from student where sstudentnumber=#{sstudentnumber}
+    </delete>
+
+    <insert id="insert" parameterType="com.student.entity.Student" >
+        insert into student (sname,ssex,sstudentnumber,sidnumber,szhengzhi,sbirthday,stel,stelparent,sqq,semail,spwd,saddress)
+        values (#{sname},#{ssex},#{sstudentnumber},#{sidnumber},#{szhengzhi},#{sbirthday},#{stel},#{stelparent},#{sqq},#{semail},#{sstudentnumber},#{saddress})
+    </insert>
+</mapper>

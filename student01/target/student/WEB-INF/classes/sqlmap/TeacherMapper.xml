@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.student.dao.TeacherMapper" >
+
+    <resultMap id="BaseResultMap" type="com.student.entity.Teacher" >
+        <id column="tid" property="tid" jdbcType="INTEGER" />
+        <result column="tname" property="tname" jdbcType="VARCHAR" />
+        <result column="tpwd" property="tpwd" jdbcType="VARCHAR" />
+        <result column="tacademy" property="tacademy" jdbcType="VARCHAR" />
+        <result column="ttag" property="ttag" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <update id="adminUpdateTeacher" parameterType="com.student.entity.Teacher">
+        update teacher set tid=#{tid}, tname=#{tname}, tpwd=#{tpwd}, tacademy=#{tacademy},ttag=#{ttag} where tid=#{tid}
+    </update>
+
+    <update id="adminUpdateClasses" parameterType="com.student.entity.Login">
+        update classes set cteacher=#{pwd} where cteacher=#{number}
+    </update>
+
+    <select id="teacherList" resultMap="BaseResultMap">
+        select * from teacher
+    </select>
+
+    <select id="selectTeacher" resultMap="BaseResultMap" parameterType="com.student.entity.Teacher">
+        select
+        *
+        from teacher
+        <where>
+            <if test="tid != null" >
+                AND tid = #{tid,jdbcType=INTEGER}
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteTeacher" parameterType="int">
+        delete from teacher where tid=#{tid}
+    </delete>
+
+    <insert id="addTeacher" parameterType="com.student.entity.Teacher" >
+        insert into teacher (tid,tname,tpwd,tacademy,ttag)
+        values (#{tid},#{tname},#{tpwd},#{tacademy},#{ttag})
+    </insert>
+</mapper>

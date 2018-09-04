@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.student.dao.DividePageMapper">
+    <!--注意： nameSpace要和接口的名字和路径对应 -->
+    <resultMap id="BaseResultMap" type="com.student.entity.Student" >
+        <id column="sid" property="sid" jdbcType="INTEGER" />
+        <result column="sstudentnumber" property="sstudentnumber" jdbcType="VARCHAR" />
+        <result column="sname" property="sname" jdbcType="VARCHAR" />
+        <result column="ssex" property="ssex" jdbcType="VARCHAR" />
+        <result column="szhengzhi" property="szhengzhi" jdbcType="VARCHAR" />
+        <result column="sbirthday" property="sbirthday" jdbcType="VARCHAR" />
+        <result column="sqq" property="sqq" jdbcType="VARCHAR" />
+        <result column="stel" property="stel" jdbcType="VARCHAR" />
+        <result column="stelparent" property="stelparent" jdbcType="VARCHAR" />
+        <result column="saddress" property="saddress" jdbcType="VARCHAR" />
+        <result column="semail" property="semail" jdbcType="VARCHAR" />
+        <result column="spwd" property="spwd" jdbcType="VARCHAR" />
+        <result column="sidnumber" property="sidnumber" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="searchInvList" parameterType="com.student.entity.Page" resultMap="BaseResultMap">
+        select * from student limit #{startRow},#{pageSize}
+    </select>
+
+    <select id="searchTotalCount" parameterType="com.student.entity.Page" resultType="java.lang.Integer">
+        select count(sid) from student
+    <where>
+        <if test="queryCondition!=null">
+            and name like CONCAT('%',#{queryCondition},'%')
+        </if>
+    </where>
+    </select>
+
+    <select id="getInvBycondtion" parameterType="com.student.entity.Page" resultMap="BaseResultMap">
+        select * from student
+        <where>
+            <if test="queryCondition!=null">
+                name like  CONCAT('%',#{queryCondition},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteInvition" parameterType="java.lang.Integer">
+        delete from STUDENT
+        where
+        sid=#{sid}
+    </delete>
+
+</mapper>
